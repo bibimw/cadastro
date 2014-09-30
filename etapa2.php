@@ -12,8 +12,13 @@
  		<input type="hidden" name="nome" value="<?php echo $_POST['nome']; ?>"> 
  		<input type="hidden" name="email" value="<?php echo $_POST['email']; ?>"> 
  		<input type="hidden" name="datanascimento" value="<?php echo $_POST['datanascimento']; ?>"> 
- 		<input type="hidden" name="sexo" value="<?php echo $_POST['sexo']; ?>"> 
- 		<input type="hidden" name="profissao" value="<?php echo $_POST['profissao']; ?>"> 
+                
+                <?php $datanascimento = $_POST['datanascimento']; if(strlen($datanascimento)<10 OR !strstr($datanascimento,'/')){echo "Verifique se o campo data de nascimento esta preenchido corretamente (xx/xx/xxxx). <br>"; $erro=TRUE;} ?>
+ 		
+                <input type="hidden" name="sexo" value="<?php echo $_POST['sexo']; ?>"> 
+ 		<input type="hidden" name="profissao" value="<?php echo $_POST['profissao']; ?>">
+                
+                <?php $profissao = $_POST['profissao']; if (empty($profissao)){echo "verifique se o campo profissao esta preenchido.<br>"; $erro=TRUE;} ?>
  		
 		<div align="center"><center> 
 			<p>Telefone: <input type="text" name="telefone" size="20"></p> 

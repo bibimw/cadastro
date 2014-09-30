@@ -12,11 +12,13 @@
  		<div align="center">
 			<center> 
 				<p>Nome: <input type="text" name="nome" size="20"></p>
+                               <?php $nome = $_POST['nome']; if(empty($nome)){echo "Verifique se o campo nome esta preenchido.<br>"; $erro=TRUE;}?>
 			</center>
 		</div>
 		<div align="center">
 			<center> 
 				<p>E-mail: <input type="text" name="email" size="20"></p> 
+                                <?php $email = $_POST['email']; if(empty($email) OR !strstr($email,'@')){echo "Digite o e-mail corretamente ou verifique se o campo esta preenchido. <br>"; $erro=TRUE;} ?>
  			</center>
 		</div>
 		<div align="center">
